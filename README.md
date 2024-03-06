@@ -54,8 +54,8 @@ Adiciona uma nova categoria de saúde com os dados fornecidos no corpo da requis
 
 |campo|tipo|obrigatório|descrição|
 |-----|----|:-----------:|---------|
-|nome|string|✅| Nome da categoria de saúde.
-|icone|string|✅|Nome do ícone associado à categoria.
+|nome|string|✅| Nome da categoria de saúde(consulte CategoriasEnum para opções válidas).
+|icone|string|✅|Nome do ícone associado à categoria(consulte IconesEnum para opções válidas).
 
 ```js
 {
