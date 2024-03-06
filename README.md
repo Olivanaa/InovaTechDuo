@@ -15,11 +15,11 @@ API do projeto InovaTechDuo - Aplicativo de saúde para monitoramento e registro
 - [Cadastrar Categoria](#cadastrar-categoria)
 - [Detalhes da Categoria](#detalhes-da-categoria)
 - [Apagar Categoria](#apagar-categoria)
-- [Atualizar Categoria](#atualizar-categoria)
+
 
 ### Listar Todas as Categorias
 
-`GET` /categorias
+`GET` /explorar
 
 Retorna um array com todas as categorias de saúde cadastradas.
 
@@ -85,7 +85,7 @@ Adiciona uma nova categoria de saúde com os dados fornecidos no corpo da requis
 
 ### Detalhes da Categoria
 
-`GET` /categoria/`{id}`
+`GET` /explorar/`{id}`
 
 Retornar os detalhes da categoria com o `id` informado como parâmetro de path.
 
@@ -112,7 +112,7 @@ ___
 
 ### Apagar Categoria
 
-`DELETE` /categoria/`{id}`
+`DELETE` /explorar/`{id}`
 
 Apagar dados da categoria com o `id` especificado no parâmetro de path.
 
@@ -126,41 +126,3 @@ Apagar dados da categoria com o `id` especificado no parâmetro de path.
 
 ___
 
-### Atualizar Categoria
-
-`PUT` /categoria/`{id}`
-
-Altera os dados da categoria especificada no `id`, utilizando as informações enviadas no corpo da requisição.
-
-#### Corpo da Requisição
-
-O corpo da requisição deve ser um objeto JSON contendo os campos que o usuário deseja atualizar na categoria. Os campos podem variar conforme necessário e podem incluir dados específicos relacionados à categoria.
-
-```js
-{
-    "meta_sono": 8,
-    "tempo_dormido": 7
-}
-```
-#### Exemplo de Resposta
-
-```js
-{
-    "id": 1,
-    "nome": "Sono",
-    "icone": "Sleep",
-    "meta_sono": 8,
-    "tempo_dormido": 7
-}
-```
-
-#### Códigos de Status
-
-|código|descrição|
-|------|---------|
-|200|Dados da categoria alterados com sucesso!
-|400|Dados enviados são inválidos. Verifique o corpo da requisição.
-|401|Acesso não permitido. É necessário autentificação.
-|404|Não existe dados na categoria com o `id` informado.
-
----
