@@ -1,6 +1,7 @@
 package br.com.fiap.InovaTechDuo.controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ import br.com.fiap.InovaTechDuo.model.Categorias;
 @RestController
 @RequestMapping("explorar")
 public class CategoriasController {
+
     Logger log = LoggerFactory.getLogger(getClass());
 
     List<Categorias> repository = new ArrayList<>();
@@ -31,19 +33,22 @@ public class CategoriasController {
 
     @PostMapping
     public ResponseEntity<Categorias> create(@RequestBody Categorias categoria) {
+
         CategoriasEnum categoriaEnum = CategoriasEnum.valueOf(categoria.nome().toUpperCase());
         IconesEnum iconeEnum = IconesEnum.valueOf(categoria.icone().toUpperCase());
 
+        List<CategoriasEnum> listCategorias = Arrays.asList(CategoriasEnum.values());
+        List<IconesEnum> listIcone = Arrays.asList(IconesEnum.values());
 
-        if (categoriaEnum == null || iconeEnum == null) {
+        if (!listCategorias.contains(categoriaEnum) || !listIcone.contains(iconeEnum)) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-
 
         log.info("Cadastrando categoria {}", categoria);
         repository.add(categoria);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(categoria);
+
     }
 
     @GetMapping("{id}")
