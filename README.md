@@ -102,7 +102,7 @@ Retornar os detalhes da categoria com o `id` informado como parâmetro de path.
 
 #### Códigos de Status
 
-|código|descrição|
+|código|descrição|   
 |------|---------|
 |200|Os dados da categoria foram retornados com sucesso!
 |401|Acesso não permitido. É necessário autentificação.
