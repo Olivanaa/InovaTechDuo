@@ -49,12 +49,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+<<<<<<< HEAD
 
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+=======
+>>>>>>> 0f494a6aa03c4ed092f1798e0e8ea1a4b870f772
 	</dependencies>
 
 	<build>
