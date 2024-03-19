@@ -1,6 +1,5 @@
 package br.com.fiap.InovaTechDuo.validation;
 
-<<<<<<< HEAD
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -18,8 +17,5 @@ public @interface TipoAtividade {
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
-=======
-public @interface TipoAtividade {
->>>>>>> 0f494a6aa03c4ed092f1798e0e8ea1a4b870f772
 
 }

@@ -1,6 +1,5 @@
 package br.com.fiap.InovaTechDuo.controller;
 
-<<<<<<< HEAD
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.NO_CONTENT;
@@ -76,8 +75,4 @@ public class AtividadeFisicaController {
     private void verificarSeCategoriaExiste(Long id) {
         repository.findById(id).orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Categoria não encontrada"));
     }
-=======
-public class AtividadeFisicaController {
-    
->>>>>>> 0f494a6aa03c4ed092f1798e0e8ea1a4b870f772
 }

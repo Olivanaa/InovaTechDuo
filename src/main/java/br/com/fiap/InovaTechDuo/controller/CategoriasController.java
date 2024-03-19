@@ -25,13 +25,9 @@ import br.com.fiap.InovaTechDuo.enums.CategoriasEnum;
 import br.com.fiap.InovaTechDuo.enums.IconesEnum;
 import br.com.fiap.InovaTechDuo.model.Categorias;
 import br.com.fiap.InovaTechDuo.repository.CategoriasRepository;
-<<<<<<< HEAD
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
-=======
-import lombok.extern.slf4j.Slf4j;
->>>>>>> 0f494a6aa03c4ed092f1798e0e8ea1a4b870f772
 
 @RestController
 @RequestMapping("explorar")
@@ -64,26 +60,8 @@ public class CategoriasController {
     // }
 
     @PostMapping
-<<<<<<< HEAD
     public Categorias create(@RequestBody @Valid Categorias categoria) {
         return repository.save(categoria);
-=======
-    public ResponseEntity<Categorias> create(@RequestBody Categorias categoria) {
-
-        CategoriasEnum categoriaEnum = CategoriasEnum.valueOf(categoria.getNome().toUpperCase());
-        IconesEnum iconeEnum = IconesEnum.valueOf(categoria.getIcone().toUpperCase());
-
-        List<CategoriasEnum> listCategorias = Arrays.asList(CategoriasEnum.values());
-        List<IconesEnum> listIcone = Arrays.asList(IconesEnum.values());
-
-        if (listCategorias.contains(categoriaEnum) || listIcone.contains(iconeEnum)) {
-            repository.save(categoria);
-            return status(CREATED).body(categoria);
-        }
-
-        return status(HttpStatus.BAD_REQUEST).build();
-
->>>>>>> 0f494a6aa03c4ed092f1798e0e8ea1a4b870f772
     }
 
     @GetMapping("{id}")
